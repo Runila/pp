@@ -1,0 +1,111 @@
+/* BallGame.css */
+.ball-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  min-height: 100vh;
+  color: white;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.reset-button {
+  background: #ff4757;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  background: #ff3742;
+  transform: scale(1.05);
+}
+
+.game-instructions {
+  text-align: center;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.game-instructions p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.camera-container {
+  position: relative;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.webcam {
+  display: block;
+}
+
+.canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .game-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .game-header h1 {
+    font-size: 2rem;
+  }
+  
+  .camera-container {
+    max-width: 100%;
+  }
+  
+  .webcam, .canvas-overlay {
+    width: 100%;
+    height: auto;
+  }
+}
