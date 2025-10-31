@@ -1,0 +1,146 @@
+.ball-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  min-height: 100vh;
+  color: white;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: rgba(151, 4, 4, 0.3);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(191, 204, 8, 0.5);
+}
+
+.reset-button {
+  background: #ff4757;
+  color: white; /* Исправлен цвет текста */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  background: #ff3742;
+  transform: scale(1.05);
+}
+
+.game-instructions {
+  text-align: center;
+  margin-bottom: 20px;
+  background: rgba(25, 157, 56, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.game-instructions p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.loading {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.ready {
+  color: #51cf66;
+  font-weight: bold;
+}
+
+.camera-container {
+  position: relative;
+  border: 3px solid rgba(147, 14, 14, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  width: 640px; /* Фиксированная ширина */
+  height: 480px; /* Фиксированная высота */
+}
+
+.webcam-video {
+  display: block;
+  transform: scaleX(-1); /* Зеркальное отображение */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Заполнение контейнера */
+}
+
+.canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1); /* Зеркалирование canvas чтобы совпадало с видео */
+}
+
+.game-stats {
+  background: rgba(204, 7, 7, 0.3);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.game-stats p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .game-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .game-header h1 {
+    font-size: 2rem;
+  }
+  
+  .camera-container {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3; /* Сохраняем пропорции */
+  }
+  
+  .webcam-video, .canvas-overlay {
+    width: 100%;
+    height: 100%;
+  }
+}
